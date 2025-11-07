@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cancer Cell Classifier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f8fa;
+      text-align: center;
+      padding: 40px;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    input[type=file] {
+      margin-top: 10px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    img {
+      margin-top: 20px;
+      width: 300px;
+      border-radius: 10px;
+    }
+    h3 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🧬 Cancer Cell Classification</h2>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" required>
+      <br>
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <h3>Prediction: {{ prediction }}</h3>
+      <img src="{{ image_path }}" alt="Uploaded Image">
+    {% endif %}
+  </div>
+</body>
+</html>

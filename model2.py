@@ -141,3 +141,5 @@ def predict_image(img_path):
 # ------------------------------
 predict_image(r"dataset\non_cancerous\5.jpg")
 predict_image(r"dataset\cancerous\image_edo_0_1552.jpg")
+
+model.save("model2/cell_classifier.h5")
